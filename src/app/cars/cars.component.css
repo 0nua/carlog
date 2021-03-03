@@ -1,0 +1,27 @@
+.car {
+  display: block;
+  margin: 10px;
+  border-style: solid;
+  border-color: gray;
+  padding: 5px;
+}
+
+.car:hover {
+  border-color: #d67373;
+  cursor: pointer;
+}
+
+.car.selected {
+  border-color: #d67373;
+}
+
+.section {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.cars-list {
+  width: 25%;
+  border-right: 1px dashed;
+  padding: 5px;
+}

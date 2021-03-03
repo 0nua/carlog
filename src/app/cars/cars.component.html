@@ -1,0 +1,9 @@
+<div class="section cars-list">
+  <h2>Машины</h2>
+  <div class="car" [class.selected]="car === selectedCar" *ngFor="let car of cars" (click)="onSelect(car)">
+    <div>Model: {{car.model}}</div>
+    <sup>VIN: {{car.vin}}</sup>
+  </div>
+</div>
+
+<app-notes class="section notes" [car]="selectedCar"></app-notes>
