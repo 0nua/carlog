@@ -1,19 +1,15 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {Car} from './cars/car';
+import {DiskService} from './disk.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarsService {
 
-  constructor() {
-  }
+  constructor(private disk: DiskService) {}
 
-  getCars(): Observable<Car[]> {
-    return of([
-      {vin: 'KMHBT51DP9U877178', model: 'HYUNDAI GETZ', name: 'Гошан'},
-      {vin: 'XW8ZZZ61ZJG054076', model: 'VW POLO V седан', name: 'Палыч'},
-    ]);
+  getCars(): Observable<any> {
+    return this.disk.getInfo();
   }
 }

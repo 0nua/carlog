@@ -1,0 +1,7 @@
+{
+  "/v1/disk/": {
+    "target": "https://cloud-api.yandex.net",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

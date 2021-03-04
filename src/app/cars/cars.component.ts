@@ -17,11 +17,19 @@ export class CarsComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getCars()
-      .subscribe(cars => this.cars = cars);
+      .subscribe(data => {
+        if (data._embedded.items.length === 0) {
+          this.cars = [];
+          return;
+        }
+        this.cars = data._embedded.items.map(item => {
+          const parts = item.name.split('|');
+          return {model: parts[0] || 'Unknown', vin: parts[1] || 'Unknown'};
+        });
+      });
   }
 
   onSelect(car: Car): void {
     this.selectedCar = car;
   }
-
 }
